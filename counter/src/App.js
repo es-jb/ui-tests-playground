@@ -5,10 +5,10 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="h-screen flex items-center justify-center bg-gray-100">
-      <div className="flex space-x-8 items-center">
+    <div className="flex items-center justify-center h-screen bg-gray-100">
+      <div className="flex items-center space-x-8">
         <button
-          className="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600"
+          className="px-4 py-2 font-bold text-white bg-red-500 rounded hover:bg-red-600"
           onClick={() => setCount(count - 1)}
         >
           -
@@ -17,7 +17,7 @@ function App() {
           {count}
         </span>
         <button
-          className="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600"
+          className="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-600"
           onClick={() => setCount(count + 1)}
         >
           +
