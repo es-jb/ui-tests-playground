@@ -1,5 +1,5 @@
 {
-  "name": "simple-counter",
+  "name": "counter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
