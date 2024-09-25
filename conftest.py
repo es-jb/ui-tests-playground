@@ -18,3 +18,12 @@ def browser():
     yield browser
 
     browser.quit()
+
+
+def pytest_addoption(parser):
+    parser.addoption("--base-url", action="store", default="http://localhost:3000")
+
+
+@pytest.fixture(scope="session", autouse=True)
+def base_url(request):
+    return request.config.getoption("--base-url")
