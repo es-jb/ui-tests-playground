@@ -25,7 +25,7 @@ class CounterPage:
 
 
 class TestCounterApp:
-    URL = "http://localhost:3001"
+    URL = "http://localhost:3000"
 
     @pytest.fixture(autouse=True)
     def initialize(self, browser):

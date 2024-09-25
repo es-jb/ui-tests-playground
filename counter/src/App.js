@@ -19,7 +19,9 @@ function App() {
           className="flex items-center justify-center px-10 py-5 mx-2 bg-white bg-opacity-50 rounded-lg"
           style={{ minWidth: "300px" }}
         >
-          <span className="font-bold text-gray-800 text-9xl">{count}</span>
+          <span id="counter-value" className="font-bold text-gray-800 text-9xl">
+            {count}
+          </span>
         </div>
 
         <button
