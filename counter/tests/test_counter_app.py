@@ -25,12 +25,10 @@ class CounterPage:
 
 
 class TestCounterApp:
-    URL = "http://localhost:3000"
-
     @pytest.fixture(autouse=True)
-    def initialize(self, browser):
+    def initialize(self, browser, base_url):
         self.counter_page = CounterPage(browser)
-        self.counter_page.load(self.URL)
+        self.counter_page.load(base_url)
 
     def test_initial_counter_value(self):
         assert self.counter_page.get_counter_value() == 0
