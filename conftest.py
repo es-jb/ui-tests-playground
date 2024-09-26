@@ -27,3 +27,18 @@ def pytest_addoption(parser):
 @pytest.fixture(scope="session", autouse=True)
 def base_url(request):
     return request.config.getoption("--base-url")
+
+
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    if rep.when == "call" and rep.failed:
+        driver = item.funcargs.get("browser")
+        if driver:
+            # Capture screenshot and HTML DOM
+            screenshot = driver.get_screenshot_as_base64()
+            dom = driver.page_source
+            # Attach to report
+            item.user_properties.append(("html_dom", dom))
+            item.user_properties.append(("screenshot", screenshot))
