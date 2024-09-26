@@ -140,6 +140,10 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# JS
+node_modules
+
+# allure
 *allure_results
 *allure-results
 *allure-report
