@@ -4,9 +4,9 @@ from selenium.webdriver.remote.webdriver import WebDriver
 
 
 class CounterPage:
-    COUNTER_VALUE = (By.ID, "counter")
-    PLUS_BUTTON = (By.XPATH, "//button[text()='+']")
-    MINUS_BUTTON = (By.XPATH, "//button[text()='-']")
+    COUNTER_VALUE = (By.ID, "counter-value")
+    PLUS_BUTTON = (By.CSS_SELECTOR, "button svg[data-icon='plus']")
+    MINUS_BUTTON = (By.CSS_SELECTOR, "button svg[data-icon='minus']")
 
     def __init__(self, driver: WebDriver):
         self.driver = driver
